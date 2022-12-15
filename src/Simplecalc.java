@@ -5,12 +5,12 @@ import java.util.Scanner;
 public class Simplecalc {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        String entrada;
-        do{
-            System.out.println("Escoja una operaci�n o pulse 0 para salir.");
+        String entrada ="";
+        do{           
+            System.out.println("Escoja una operaciï¿½n o pulse 0 para salir.");
             System.out.println("Operaciones: + - * /");
             System.out.print("> ");
-            entrada = sc.nextLine();
+            entrada = sc.next();
             int n1 = 0, n2 = 0;
             if("+-**/".contains(entrada)){
                 System.out.print("Operando 1 > ");
@@ -18,24 +18,25 @@ public class Simplecalc {
                 System.out.print("Operando 2 > ");
                 n2 = sc.nextInt();
             }else{
-                System.out.println("Operaci�n incorrecta!");
+                System.out.println("Operaciï¿½n incorrecta!");
             }
-            if(entrada.equals("+")){
-                System.out.println("%d+%d=%d".formatted(n1,n2,n1+n2));
+            switch (entrada) {            
+                case "+":
+                    System.out.println("%d+%d=%d".formatted(n1,n2,n1+n2));
+                break;            
+                case "-":
+                    System.out.println("%d-%d=%d".formatted(n1,n2,n1-n2));
+                break;               
+                case "*":
+                    System.out.println("%dx%d=%d".formatted(n1,n2,n1*n2));
+                break;            
+                case "/":
+                    System.out.println("%d/%d=%d".formatted(n1,n2,n1/n2));
+                break;                
+                default:
+                    System.out.println("Escriba +, -, *, /");
+                break;
             }
-            
-            if(entrada.equals("-")){
-                System.out.println("%d-%d=%d".formatted(n1,n2,n1-n2));
-            }
-            
-            if(entrada.equals("*")){
-                System.out.println("%dx%d=%d".formatted(n1,n2,n1*n2));
-            }
-            
-            if(entrada.equals("/")){
-                System.out.println("%d/%d=%d".formatted(n1,n2,n1/n2));
-            }
-            
         }while(!entrada.equals(""));        
         
     }

@@ -12,7 +12,7 @@ public class Simplecalc {
             System.out.print("> ");
             entrada = sc.nextLine();
             int n1 = 0, n2 = 0;
-            if("+-*/".contains(entrada)){
+            if("+-**/".contains(entrada)){
                 System.out.print("Operando 1 > ");
                 n1 = sc.nextInt();
                 System.out.print("Operando 2 > ");
